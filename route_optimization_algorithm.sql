@@ -24,6 +24,8 @@ with cte as (SELECT * FROM pgr_dijkstra('SELECT id, source, target, cost FROM ad
     ) Select route_geom From with_geom;	
 $body$
 LANGUAGE 'sql';
+
+#test functions 
 select routing4 (array[[38.762214,8.937409]],array[[39.787432,9.964137],[39.756085,9.959341]])
 select * from test_ limit 3
 SELECT ST_AsGeoJSON (ST_Union (routing4)) from routing4 (array[[38.762214,8.937409]],array[[39.787432,9.964137],[39.756085,9.959341]])
